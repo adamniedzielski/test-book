@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pandoc -V title="My awesome book" -V author="Adam Niedzielski" --number-sections --toc --toc-depth=1 --filter=../headings/headings -s -t html5 -o book.html --self-contained chapter1.md chapter2.md chapter3.md &&
+pandoc -V documentclass=report -V title="My awesome book" -V author="Adam Niedzielski" --number-sections --toc --toc-depth=1 --filter=../headings/headings -s -o book.pdf chapter1.md chapter2.md chapter3.md &&
+pandoc --number-sections --toc --toc-depth=1 --filter=../headings/headings -s -o book.epub --self-contained metadata.md chapter1.md chapter2.md chapter3.md &&
+ebook-convert book.epub book.mobi
