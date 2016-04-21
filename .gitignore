@@ -1,4 +1,2 @@
-book.epub
-book.html
-book.mobi
-book.pdf
+/build/*
+!/build/.keep
